@@ -44,11 +44,13 @@ public class Visit {
     }
 
     public double getTotalExpense(){
-        return getProductExpense()+getServiceExpense(); //should be added discounts...
+        Discount discount = new Discount();
+        return getProductExpense()-(getServiceExpense()*discount.getServiceDiscountRate(customerName.getMemberType()))
+              +getServiceExpense()-(getProductExpense()*discount.getProductDiscountRate(customerName.getMemberType())); 
     } 
 
     public void display(){
-        System.out.println(Color.ANSI_YELLOW + "\tVisit" + Color.ANSI_RESET);
+        System.out.println(Color.ANSI_YELLOW + "\n\tVisit" + Color.ANSI_RESET);
         System.out.println(Color.ANSI_GREEN + "Customer Name : " + Color.ANSI_RED + customerName.getName() + Color.ANSI_RESET);
         System.out.println(Color.ANSI_GREEN + "Date : " + Color.ANSI_RED + getDate() + Color.ANSI_RESET);
         System.out.println(Color.ANSI_GREEN + "Service Expense : " + Color.ANSI_RED + getServiceExpense() + Color.ANSI_RESET);

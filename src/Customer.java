@@ -26,7 +26,7 @@ public class Customer {
         this.memberType = memberType;
     }
     public void display(){
-        System.out.println(Color.ANSI_YELLOW + "\tCustomer" + Color.ANSI_RESET);
+        System.out.println(Color.ANSI_YELLOW + "\n\tCustomer" + Color.ANSI_RESET);
         System.out.println(Color.ANSI_GREEN + "Name : " + Color.ANSI_RED + getName() + Color.ANSI_RESET);
         System.out.println(Color.ANSI_GREEN + "Is member : " + Color.ANSI_RED + isMember() + Color.ANSI_RESET);
         System.out.println(Color.ANSI_GREEN + "Member Type : " + Color.ANSI_RED + getMemberType() + Color.ANSI_RESET);
